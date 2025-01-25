@@ -8,21 +8,29 @@
   src: url("./fonts/Naturaly.otf");
 }
 
+@font-face {
+  font-family: "Pangolin";
+  src: url("./fonts/Pangolin-Regular.ttf");
+}
+
 :root {
   --palette-1: #fcc6ff;
   --palette-2: #ffe6c9;
   --palette-3: #ffc785;
   --palette-4: #ffa09b;
+  --palette-5: #f8edeb;
 }
 
 body {
-  background-color: var(--palette-2);
-  font-family: "Naturaly", sans-serif;
+  background-color: var(--palette-5);
+  font-family: "Pangolin", sans-serif;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
+/* Letter section */
 
 #section-ily {
   height: 100vh;
@@ -33,13 +41,19 @@ body {
   flex-direction: column;
 }
 
-#ily-line {
+.ily-line {
   height: 25%;
   white-space: nowrap;
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#ily-line > div {
+.ily-line > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,28 +61,28 @@ body {
   font-size: 5em;
 }
 
-#ily-scroll-forward {
+.ily-scroll-forward {
   display: flex;
   white-space: nowrap;
   height: 100%;
   animation: marquee-forward 60s linear infinite;
 }
 
-#ily-scroll-forward > span {
+.ily-scroll-forward > span {
   color: var(--palette-1);
   opacity: 0.5;
   display: inline-block;
   padding-right: 50px;
 }
 
-#ily-scroll-backward {
+.ily-scroll-backward {
   display: flex;
   white-space: nowrap;
   height: 100%;
   animation: marquee-backward 60s linear infinite;
 }
 
-#ily-scroll-backward > span {
+.ily-scroll-backward > span {
   color: var(--palette-1);
   opacity: 0.5;
   display: inline-block;
@@ -102,18 +116,18 @@ body {
   height: 200px;
   background-color: #ffffff;
   z-index: 10;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
-#ily-letter:hover {
-  cursor: pointer;
+#ily-letter .envelope-wrap {
+  width: 100%;
+  height: 100%;
 }
 
-/* triangle below */
 #ily-letter .envelope {
   position: absolute;
   top: 100%;
@@ -136,6 +150,7 @@ body {
   border-right: 200px solid transparent;
   border-top: 100px solid #f2e9e4;
   z-index: 10;
+  transform-origin: top;
 }
 
 #ily-letter .heart {
@@ -156,4 +171,83 @@ body {
   width: 75%;
   height: 75%;
   object-fit: cover;
+}
+
+#ily-letter .heart span {
+  position: absolute;
+  color: #ffffff;
+}
+
+.open .lid {
+  transform: rotateX(180deg);
+  transition: transform 0.5s ease, z-index 0.6s;
+}
+
+.closed .lid {
+  transform: rotateX(0deg);
+  transition: transform 0.5s 0.5s ease, z-index 1s;
+}
+
+.open div.heart {
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.closed div.heart {
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s 0.5s ease;
+}
+
+#ily-letter .letter {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  height: 75vh;
+  background-color: #f2e9e4;
+  border-radius: 12px;
+  border-color: var(--palette-1);
+  border-width: 2px;
+  border-style: solid;
+  padding: 12px;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#ily-letter .letter * {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: pre-wrap;
+}
+
+.closed .letter {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.open .letter {
+  opacity: 1;
+  transition: opacity 0.5s 0.5s ease;
+}
+
+/* Images section */
+
+#section-images {
+  height: 100vh;
+  background-color: #fcc6ff;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
