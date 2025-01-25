@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Cheese Market";
+  src: url("./fonts/Cheese Market.otf");
+}
+
+@font-face {
+  font-family: "Naturaly";
+  src: url("./fonts/Naturaly.otf");
+}
+
+:root {
+  --palette-1: #fcc6ff;
+  --palette-2: #ffe6c9;
+  --palette-3: #ffc785;
+  --palette-4: #ffa09b;
+}
+
+body {
+  background-color: var(--palette-2);
+  font-family: "Naturaly", sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#section-ily {
+  height: 100vh;
+  padding: 20px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+#ily-line {
+  height: 25%;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+#ily-line > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 5em;
+}
+
+#ily-scroll-forward {
+  display: flex;
+  white-space: nowrap;
+  height: 100%;
+  animation: marquee-forward 60s linear infinite;
+}
+
+#ily-scroll-forward > span {
+  color: var(--palette-1);
+  opacity: 0.5;
+  display: inline-block;
+  padding-right: 50px;
+}
+
+#ily-scroll-backward {
+  display: flex;
+  white-space: nowrap;
+  height: 100%;
+  animation: marquee-backward 60s linear infinite;
+}
+
+#ily-scroll-backward > span {
+  color: var(--palette-1);
+  opacity: 0.5;
+  display: inline-block;
+  padding-left: 50px;
+}
+
+@keyframes marquee-forward {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-backward {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
