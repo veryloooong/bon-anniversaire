@@ -92,3 +92,68 @@ body {
     transform: translateX(100%);
   }
 }
+
+#ily-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background-color: #ffffff;
+  z-index: 10;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#ily-letter:hover {
+  cursor: pointer;
+}
+
+/* triangle below */
+#ily-letter .envelope {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 100px solid #edede9;
+}
+
+#ily-letter .lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #f2e9e4;
+  z-index: 10;
+}
+
+#ily-letter .heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ily-letter .heart img {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+}
