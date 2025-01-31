@@ -1,14 +1,4 @@
 @font-face {
-  font-family: "Cheese Market";
-  src: url("./fonts/Cheese Market.otf");
-}
-
-@font-face {
-  font-family: "Naturaly";
-  src: url("./fonts/Naturaly.otf");
-}
-
-@font-face {
   font-family: "Pangolin";
   src: url("./fonts/Pangolin-Regular.ttf");
 }
@@ -28,6 +18,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Letter section */
@@ -240,14 +231,134 @@ body {
   transition: opacity 0.5s 0.5s ease;
 }
 
+.letter > p {
+  font-size: 1.5em;
+}
+
 /* Images section */
 
 #section-images {
-  height: 100vh;
-  background-color: #fcc6ff;
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#section-images > h1 {
+  color: var(--palette-1);
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.images-grid {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.grid-column {
+  flex: 24%;
+  max-width: 24%;
+}
+
+.grid-column > img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-column {
+    flex: 49%;
+    max-width: 49%;
+  }
+}
+
+/* button section */
+#section-button {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("./assets/background-heart.jpg");
+}
+
+#section-button h2 {
+  font-size: 2em;
+  color: var(--palette-4);
+}
+
+#section-button button {
+  font-family: "Pangolin", sans-serif;
+  font-size: 2em;
+  color: white;
+  background-color: var(--palette-4);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+#section-button button:hover {
+  background-color: var(--palette-3);
+  transition: background-color 0.5s ease;
+}
+
+/* Days counter section */
+#section-counter {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--palette-4);
+}
+
+#section-counter > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#section-counter h1 {
+  font-size: 3em;
+}
+
+#counter-tiles {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+#counter-tiles li {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  font-size: 2em;
+}
+
+#counter-tiles li > b {
+  font-size: 2.5em;
 }

@@ -7,16 +7,7 @@ function closeLetter(envelope) {
 }
 
 $(document).ready(function() {
-  // $(".envelope-wrap").click(function() {
-  //   var letter = $("#ily-letter");
-  //   if (letter.hasClass("closed")) {
-  //     openLetter(letter);
-  //   } else {
-  //     closeLetter(letter);
-  //   }
-  // });
-
-  $("#ily-letter").click(function(event) {
+  $("#ily-letter").click(function() {
     if ($(this).hasClass("closed")) {
       openLetter($(this));
     } else {
